@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK CORPATARIN 2 Jakarta - Membangun Generasi Unggul</title>
+    <meta name="description" content="SMK CORPATARIN 2 Jakarta adalah sekolah menengah kejuruan terkemuka yang mengutamakan pendidikan berkualitas dan pengembangan karakter siswa">
+    <meta name="keywords" content="SMK, sekolah kejuruan, pendidikan, Corpatarin, Jakarta, belajar, siswa, guru, kurikulum">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            margin-left: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f39c12;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,300 1000,1000 0,1000"/></svg>');
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .school-profile {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .profile-item strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .accreditation-badge {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .accreditation-info {
+            background: #e8f6f3;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .programs-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            padding: 2rem;
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .facility-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .facility-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .facility-image {
+            height: 200px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .facility-content {
+            padding: 1.5rem;
+        }
+
+        .facility-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        /* News Section */
+        .news {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .news-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .news-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item span {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #f39c12;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f39c12;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                gap: 2rem;
+                padding-top: 3rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .programs-grid,
+            .facility-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                🎓 <span>SMK CORPATARIN 2 JAKARTA</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#programs">Program</a></li>
+                <li><a href="#facilities">Fasilitas</a></li>
+                <li><a href="#news">Berita</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Membangun Generasi Unggul</h1>
+            <p>SMK CORPATARIN 2 JAKARTA mengutamakan pendidikan kejuruan berkualitas dengan pendekatan modern dan teknologi terdepan untuk mempersiapkan siswa menghadapi dunia kerja</p>
+            <a href="#contact" class="cta-button">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card fade-in">
+                <div class="stat-number">800+</div>
+                <div class="stat-label">Siswa Aktif</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Tingkat Kelulusan</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">40</div>
+                <div class="stat-label">Guru Berpengalaman</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Tahun Berpengalaman</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title fade-in">Tentang SMK CORPATARIN 2 JAKARTA</h2>
+        <div class="school-profile fade-in">
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <strong>NPSN:</strong>
+                    <span>20103706</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Nama Sekolah:</strong>
+                    <span>SMKS CORPATARIN 2 JAKARTA</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Status Sekolah:</strong>
+                    <span>SWASTA</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Alamat Jalan:</strong>
+                    <span>JL. PONDOK KOPI RAYA NO. 87 RT 0 RW 0</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Desa/Kelurahan:</strong>
+                    <span>Pondok Kopi</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Kecamatan:</strong>
+                    <span>Kec. Duren Sawit</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Kabupaten/Kota:</strong>
+                    <span>Kota Adm. Jakarta Timur</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Provinsi:</strong>
+                    <span>Prov. D.K.I. Jakarta</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Kode Pos:</strong>
+                    <span>13460</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Bentuk Pendidikan:</strong>
+                    <span>SMK</span>
+                </div>
+                <div class="profile-item">
+                    <strong>Akreditasi:</strong>
+                    <span class="accreditation-badge">B</span>
+                </div>
+            </div>
+            <div class="accreditation-info">
+                <p><strong>Tahun Akreditasi:</strong> 2023</p>
+                <p><strong>No SK:</strong> 119/BAN-PDM/SK/2023</p>
+                <p><strong>Visi:</strong> Menjadi SMK unggulan yang menghasilkan lulusan berkarakter, kompeten, dan siap kerja</p>
+                <p><strong>Misi:</strong> Menyelenggarakan pendidikan kejuruan yang berkualitas, mengembangkan potensi siswa secara optimal, dan membangun kemitraan dengan dunia usaha dan industri</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <h2 class="section-title fade-in">Program Keahlian</h2>
+        <div class="programs-grid">
+            <div class="program-card fade-in">
+                <div class="program-icon">🚗</div>
+                <h3>Teknik Kendaraan Ringan</h3>
+                <p>Program keahlian yang mempersiapkan siswa menjadi teknisi otomotif yang kompeten dalam perawatan, perbaikan, dan servis kendaraan ringan seperti mobil dan sepeda motor</p>
+            </div>
+            <div class="program-card fade-in">
+                <div class="program-icon">🎨</div>
+                <h3>Desain Komunikasi Visual</h3>
+                <p>Program yang fokus pada pengembangan kreativitas dalam bidang desain grafis, branding, advertising, dan komunikasi visual untuk media cetak maupun digital</p>
+            </div>
+            <div class="program-card fade-in">
+                <div class="program-icon">⚙️</div>
+                <h3>Teknik Pemesinan</h3>
+                <p>Program keahlian yang mengembangkan kemampuan siswa dalam pengoperasian mesin-mesin produksi, pembubutan, pengefraisan, dan teknologi manufaktur modern</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <h2 class="section-title fade-in">Fasilitas Unggulan</h2>
+        <div class="facility-grid">
+            <div class="facility-card fade-in">
+                <div class="facility-image">🚗</div>
+                <div class="facility-content">
+                    <h4>Bengkel Otomotif Modern</h4>
+                    <p>Bengkel berstandar industri dengan lift hidrolik, diagnostic scanner, engine analyzer, dan kendaraan praktek untuk pembelajaran TKR yang komprehensif</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🔧</div>
+                <div class="facility-content">
+                    <h4>Workshop Pemesinan CNC</h4>
+                    <p>Workshop dilengkapi mesin CNC milling, CNC turning, mesin bubut konvensional, mesin frais, dan peralatan ukur presisi untuk praktik pemesinan modern</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🎨</div>
+                <div class="facility-content">
+                    <h4>Studio DKV & Multimedia</h4>
+                    <p>Studio kreatif dengan workstation high-end, tablet grafis, printer DTF, cutting sticker, dan kamera profesional untuk pembelajaran DKV</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🖥️</div>
+                <div class="facility-content">
+                    <h4>Lab Komputer Multimedia</h4>
+                    <p>Laboratorium dengan 40 unit komputer spesifikasi tinggi, software desain professional (Adobe Creative Suite, AutoCAD), dan akses internet fiber optik</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">📐</div>
+                <div class="facility-content">
+                    <h4>Ruang Gambar Teknik</h4>
+                    <p>Ruang khusus dengan meja gambar profesional, alat ukur presisi, dan proyektor untuk pembelajaran gambar teknik dan CAD</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🏭</div>
+                <div class="facility-content">
+                    <h4>Teaching Factory</h4>
+                    <p>Unit produksi sekolah yang mengintegrasikan pembelajaran dengan produksi nyata, menghasilkan produk berkualitas sambil belajar</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">📚</div>
+                <div class="facility-content">
+                    <h4>Perpustakaan Digital</h4>
+                    <p>Perpustakaan modern dengan koleksi e-book teknik, jurnal industri, database online, dan ruang diskusi untuk mendukung riset siswa</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🏢</div>
+                <div class="facility-content">
+                    <h4>Aula Serbaguna</h4>
+                    <p>Ruang pertemuan berkapasitas 300 orang dengan fasilitas sound system, proyektor, dan AC untuk berbagai kegiatan sekolah</p>
+                </div>
+            </div>
+            <div class="facility-card fade-in">
+                <div class="facility-image">🏃</div>
+                <div class="facility-content">
+                    <h4>Fasilitas Olahraga</h4>
+                    <p>Lapangan basket, voli, futsal, dan ruang fitness untuk mengembangkan kebugaran jasmani dan mental siswa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <h2 class="section-title fade-in">Berita Terkini</h2>
+        <div class="news-grid">
+            <div class="news-card fade-in">
+                <div class="news-image">🏆</div>
+                <div class="news-content">
+                    <div class="news-date">5 Agustus 2025</div>
+                    <h4>Siswa TKR Raih Juara 1 Lomba Kompetensi Siswa Tingkat Provinsi</h4>
+                    <p>Tim Teknik Kendaraan Ringan SMK Corpatarin 2 berhasil meraih juara pertama dalam Lomba Kompetensi Siswa bidang otomotif tingkat DKI Jakarta...</p>
+                </div>
+            </div>
+            <div class="news-card fade-in">
+                <div class="news-image">🎓</div>
+                <div class="news-content">
+                    <div class="news-date">1 Agustus 2025</div>
+                    <h4>Wisuda Siswa Kelas XII Tahun Ajaran 2024/2025</h4>
+                    <p>Upacara wisuda dihadiri oleh 200 siswa lulusan dengan tingkat kelulusan 95% dan banyak yang sudah diterima di dunia kerja dan industri...</p>
+                </div>
+            </div>
+            <div class="news-card fade-in">
+                <div class="news-image">🤝</div>
+                <div class="news-content">
+                    <div class="news-date">28 Juli 2025</div>
+                    <h4>Kerjasama dengan Industri Otomotif dan Percetakan</h4>
+                    <p>SMK Corpatarin 2 menandatangani MoU dengan bengkel resmi dan perusahaan percetakan untuk program magang siswa TKR, DKV, dan Pemesinan...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h3>Hubungi Kami</h3>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Alamat:</strong><br>
+                        Jl. Pondok Kopi Raya No. 87, Pondok Kopi<br>
+                        Duren Sawit, Jakarta Timur 13460
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <div>
+                        <strong>Telepon:</strong><br>
+                        (021) 8611-234
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <div>
+                        <strong>Email:</strong><br>
+                        info@smkcorpatarin2-jkt.sch.id
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>🕒</span>
+                    <div>
+                        <strong>Jam Operasional:</strong><br>
+                        Senin - Jumat: 07:00 - 16:00<br>
+                        Sabtu: 07:00 - 12:00
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form fade-in">
+                <h3>Kirim Pesan</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>SMK Corpatarin 2 Jakarta</h4>
+                <p>Sekolah Menengah Kejuruan yang mengutamakan pendidikan berkualitas dan pengembangan karakter siswa untuk mempersiapkan tenaga kerja yang kompeten dan siap pakai.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Program Keahlian</h4>
+                <ul>
+                    <li><a href="#programs">Teknik Kendaraan Ringan</a></li>
+                    <li><a href="#programs">Desain Komunikasi Visual</a></li>
+                    <li><a href="#programs">Teknik Pemesinan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="#about">Tentang Sekolah</a></li>
+                    <li><a href="#facilities">Fasilitas</a></li>
+                    <li><a href="#news">Berita</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Ikuti Kami</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SMK Corpatarin 2 Jakarta. Hak Cipta Dilindungi. | Membangun generasi unggul dan berkarakter</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString() + (target >= 1000 ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/[^\d]/g, ''));
+                        stat.textContent = '0';
+                        animateCounter(stat, number);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Form submission handler
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.message) {
+                alert('Mohon lengkapi semua field yang wajib diisi!');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Mengirim...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 80);
+            }
+        });
+    </script>
+</body>
+</html>
